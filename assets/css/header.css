@@ -230,6 +230,14 @@
   margin-left: 20px !important
 }
 
+.site-header-cart .widget_shopping_cart {
+  width: 210px !important;
+}
+
+.site-header-cart.focus .widget_shopping_cart, .site-header-cart:hover .widget_shopping_cart {
+  left: -45px !important;
+}
+
 /*STYLES TO DOC CHANGES*/
 
 .hentry .entry-header h1 {
@@ -280,7 +288,7 @@
   text-transform: uppercase;
   font-size: 0.875rem;
   justify-content: center;
-  width: 165.7px;
+  width: 200px;
   height: 50.7px;
   background-color: #f68b1f !important;
   display: block;
@@ -289,6 +297,10 @@
   font-family: 'FiraSans';
   font-weight: 500 !important;
   margin: 0 auto;
+}
+
+.add_to_cart_button:hover {
+  background-color: #dd7916;
 }
 
 @media screen and (max-width: 1350px) {
@@ -423,8 +435,15 @@
   /* ||||||||||| STYLES TO CHANGE THE ORIGINAL ELEMENTS OF THEME |||||||||||*/
   .cart-contents, .site-search {
     display: block !important;
-    margin-top: 25px;
     width: 100% !important;
+  }
+
+  .site-search {
+    margin-top: 25px;
+  }
+
+  .cart-contents {
+    margin-bottom: 25px;
   }
 
   .site-header-cart {
