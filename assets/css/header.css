@@ -96,8 +96,8 @@
   top: 0;
   width: 100%;
   z-index: 12;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 2%;
+  padding-right: 2%;
   transition: 0.2s background-color ease;
 }
 .site-navbar + main {
@@ -165,7 +165,7 @@
 }
 .site-navbar__menu-link:hover,
 .site-navbar__menu-link.active {
-  border-bottom: 1.5px solid #3b9ddf;
+  border-bottom: 1.5px solid #3b9ddf !important;
   color: #fff;
 }
 .site-navbar__sesion-link {
@@ -193,6 +193,8 @@
 /* ||||||||||| STYLES TO CHANGE THE ORIGINAL ELEMENTS OF THEME |||||||||||*/
 
 .storefront-primary-navigation {
+  align-items: center;
+  display: flex;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -201,12 +203,41 @@
   display: none !important;
 }
 
-.main-navigation {
+/*.main-navigation {
   display: none !important;
+}*/
+
+.woocommerce-active .site-header .main-navigation {
+  margin-right: 40px !important;
+  width: 100% !important;
+}
+
+.woocommerce-active .site-header .main-navigation ul li a {
+  color: #ffffff !important;
+  font-family: 'FiraSans';
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0 !important;
+}
+
+.woocommerce-active .site-header .main-navigation ul li a:hover {
+  border-bottom: 2px solid #3b9ddf;
+  color: red;
+  height: 21.5px;
+}
+
+.products .slick-dots {
+  display: none;
+}
+
+.site-header-cart .cart-contents {
+  display: flex !important;
+  width: 140px !important;
 }
 
 .site-search {
   margin-bottom: 0 !important;
+  width: 170px !important;
 }
 
 .site-header-cart {
@@ -236,6 +267,62 @@
 
 .site-header-cart.focus .widget_shopping_cart, .site-header-cart:hover .widget_shopping_cart {
   left: -45px !important;
+}
+
+#customer_login h1 {
+  font-family: 'FiraSans';
+  font-size: 2.3em !important;
+  font-weight: 400;
+}
+
+#customer_login h2 {
+  font-family: 'FiraSans';
+  font-size: 2em !important;
+  font-weight: 500;
+}
+
+.woocommerce-form .woocommerce-Input {
+  background-color: #ffffff;
+  box-shadow: none;
+  font-family: 'FiraSans';
+  font-weight: 400;
+  width: 308px;
+  margin-top: 34px;
+  border: none;
+  border-bottom: solid 1px #e1e1e1;
+  padding: 1em;
+  color: #959595;
+  cursor: pointer;
+}
+
+.woocommerce-form .woocommerce-Input:focus {
+  background-color: #ffffff;
+}
+
+.woocommerce-form label,
+form.register label {
+  color: #4189c2;
+  font-family: 'FiraSans';
+  font-weight: 500;
+}
+
+p.woocommerce-LostPassword.lost_password a {
+  color: #6d6d6d;
+  border-bottom: none;
+  font-family: 'FiraSans';
+  font-weight: 500;
+}
+
+p.woocommerce-LostPassword.lost_password a:hover {
+  border-bottom: solid 1px #4189c2;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.handheld-navigation, .main-navigation div.menu > ul:not(.nav-menu), .nav-menu {
+  overflow: initial !important;
 }
 
 /*STYLES TO DOC CHANGES*/
@@ -299,7 +386,34 @@
   margin: 0 auto;
 }
 
-.add_to_cart_button:hover {
+.add_to_cart_button:hover,
+input.woocommerce-Button.button:hover {
+  background-color: #dd7916;
+}
+
+input.woocommerce-Button.button {
+  align-items: center;
+  color: #fff !important;
+  padding: 0;
+  display: flex !important;
+  letter-spacing: 1.8px;
+  text-align: center;
+  border-radius: 1px;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  justify-content: center;
+  width: 200px;
+  height: 50.7px;
+  background-color: #f68b1f !important;
+  display: block;
+  cursor: pointer;
+  transition: 0.3s background-color ease;
+  font-family: 'FiraSans';
+  font-weight: 500 !important;
+  margin-bottom: 20px;
+}
+
+input.woocommerce-Button.button:hover {
   background-color: #dd7916;
 }
 
@@ -314,7 +428,18 @@
     margin-right: 30px;
   }
 }
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1149px) {
+  .main-navigation ul {
+    margin-bottom: 60px !important;
+  }
+
+  .primary-navigation {
+    display: block !important;
+    height: 21.5px;
+  }
+  .storefront-primary-navigation {
+    flex-direction: column-reverse;
+  }
   .site-navbar__sesion {
     display: none;
   }
@@ -388,6 +513,7 @@
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     color: #fff;
+    min-height: 100%;
   }
   .site-navbar__menu-link {
     border-bottom: 1px solid #0f3458;
@@ -439,7 +565,12 @@
   }
 
   .site-search {
+    min-height: 135px;
     margin-top: 25px;
+  }
+
+  .site-header-cart .cart-contents {
+    width: 100% !important;
   }
 
   .cart-contents {
